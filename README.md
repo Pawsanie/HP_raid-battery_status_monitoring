@@ -58,7 +58,7 @@ systemctl restart zabbix-agent
 ## Preparing Zabbix server for monitoring:
 Apply template "zbx_raid_battery_templates.xml" to Zabbix server.
 **File location:**<br>
-**./**:open_file_folder:Data<br>
+**./**:open_file_folder:HP_raid-battery_status_monitoring<br>
    └── :file_folder:Zabbix-Server_Template<br>
             └── :page_facing_up:zbx_raid_battery_templates.xml<br>
 
