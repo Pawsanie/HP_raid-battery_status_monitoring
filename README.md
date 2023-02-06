@@ -56,7 +56,7 @@ Read more on the manufacturer's [official website](https://www.hpe.com/)
 systemctl restart zabbix-agent
 ```
 ## Preparing Zabbix server for monitoring:
-Apply template "zbx_raid_battery_templates.xml" to Zabbix server.
+Apply template "zbx_raid_battery_templates.xml" to Zabbix server.<br>
 **File location:**<br>
 **./**:open_file_folder:HP_raid-battery_status_monitoring<br>
    └── :file_folder:Zabbix-Server_Template<br>
