@@ -41,6 +41,27 @@ Monitoring is based on parsing output to the terminal from the "hpssacli" applic
 :warning:**Additional charges may apply** to use the app.:warning:<br>
 Read more on the manufacturer's [official website](https://www.hpe.com/)
 
+## Preparing Zabbix agent for monitoring:
+1) Copy the files from the "Scripts" folder to the specified folder on your monitored node.
+```text
+/etc/zabbix/zabbix_agentd.d/scripts/
+```
+2) Copy the files from the "Zabbix-Agent_configs" folder to the specified folder on your monitored node.
+```text
+/etc/zabbix/zabbix_agentd.d/
+```
+3) Restart the zabbix agent on the monitored node.<br>
+**As an example with bash on CenOs7 servers:**<br>
+```bash
+systemctl restart zabbix-agent
+```
+## Preparing Zabbix server for monitoring:
+Apply template "zbx_raid_battery_templates.xml" to Zabbix server.
+**File location:**<br>
+**./**:open_file_folder:Data<br>
+   └── :file_folder:Zabbix-Server_Template<br>
+            └── :page_facing_up:zbx_raid_battery_templates.xml<br>
+
 ***
 
 **Thank you** for your interest in my work.<br><br>
