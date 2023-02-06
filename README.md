@@ -16,7 +16,6 @@ It's specifically about:
 :warning:This means that you **may need a paid subscription or license or their equivalent** to use HP software on your machines.<br><br>
 
 ___
-<br>
 
 ## Required:
 The monitoring code is written in bash and obviously depends on it.<br>
@@ -60,7 +59,9 @@ Apply template "zbx_raid_battery_templates.xml" to Zabbix server.<br>
 **File location:**<br>
 **./**:open_file_folder:HP_raid-battery_status_monitoring<br>
    └── :file_folder:Zabbix-Server_Template<br>
-            └── :page_facing_up:zbx_raid_battery_templates.xml<br>
+            └── :page_facing_up:zbx_raid_battery_templates.xml
+
+You can read more about this in the [official documentation](https://www.zabbix.com/documentation/6.0/en/manual/xml_export_import/templates#importing).
 
 ***
 
