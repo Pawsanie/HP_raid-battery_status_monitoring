@@ -6,7 +6,7 @@
 HP="sudo hpssacli ctrl all show config detail"
 
 #Error count as default:
-errors_count=x
+errors_count=0
 
 #Checks the status of logical disks:
             for i in $($HP | grep -A 8 "Logical Drive: " | grep "Status:" | cut -d ' ' -f11 | awk {'print $0'})

@@ -6,7 +6,7 @@
 HP="sudo hpssacli ctrl all show config detail"
 
 #Error count as default:
-errors_count=x
+errors_count=0
 
 #Checks the status of physical disks:
             for i in $($HP | grep physicaldrive | cut -d ' ' -f16 | sed 's/)//g' | awk {'print $0'})

@@ -6,7 +6,7 @@
 HP="sudo hpssacli ctrl all show config detail"
 
 #Error count as default:
-errors_count=x
+errors_count=0
 
 #Checks the status of the motherboard battery:
             for i in $($HP | grep "Battery/Capacitor Status:" | cut -d ' ' -f6 | awk {'print $0'})
