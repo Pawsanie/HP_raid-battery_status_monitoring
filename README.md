@@ -3,9 +3,9 @@
 Monitoring scripts solve the problem of not being able to otherwise get the necessary data on some old [HP-iLO](https://www.hpe.com/emea_europe/en/hpe-integrated-lights-out-ilo.html) servers.
 
 It's specifically about:
-* A status of the raids of physical disks.
-* Status of logical drives.
-* Motherboard battery status.
+* :atm:A status of the raids of physical disks.
+* :abacus:Status of logical drives.
+* :battery:Motherboard battery status.
 
 ## Disclaimer:
 :warning:**Using** some or all of the elements of this code, **You** assume **responsibility for any consequences!**<br>
@@ -38,7 +38,7 @@ the configurations and templates in the repository are designed to work with Zab
 
 Monitoring is based on parsing output to the terminal from the "hpssacli" application.<br>
 **Without this application**, the work of scripts is **not possible**.<br>
-:warning:**Additional charges may apply** to use the app.<br>
+:warning:**Additional charges may apply** to use the app.:warning:<br>
 Read more on the manufacturer's [official website](https://www.hpe.com/)
 
 ***
