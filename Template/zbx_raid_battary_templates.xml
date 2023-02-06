@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-01-17T13:08:35Z</date>
+    <groups>
+        <group>
+            <name>HP_iLO_monitoring</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>HP physical-Logical drive and battery</template>
+            <name>HP physical-Logical drive and battery</name>
+            <description>Complements iLO monitoring with missing metrics.&#13;
+Monitor physical/logical disks and battery.</description>
+            <groups>
+                <group>
+                    <name>HP_iLO_monitoring</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Battery Status</name>
+                </application>
+                <application>
+                    <name>Logical Drive</name>
+                </application>
+                <application>
+                    <name>Physical Drive</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Battery status</name>
+                    <key>vfs.fs.battery</key>
+                    <delay>32m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Battery Status</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(ОК)}=0</expression>
+                            <name>Battery problems {HOSTNAME}</name>
+                            <priority>WARNING</priority>
+                            <description>With {HOSTNAME}  {ITEM.LASTVALUE}</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Physical drive</name>
+                    <key>vfs.fs.discstatus</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Physical Drive</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(ОК)}=0</expression>
+                            <name>Problems with the physical disk of the {HOSTNAME}</name>
+                            <priority>HIGH</priority>
+                            <description>With {HOSTNAME}  {ITEM.LASTVALUE}</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Logical drive</name>
+                    <key>vfs.fs.logicalstatus</key>
+                    <delay>31m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Logical Drive</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(ОК)}=0</expression>
+                            <name>Problems with the logical disk of the {HOSTNAME}</name>
+                            <priority>HIGH</priority>
+                            <description>With {HOSTNAME}  {ITEM.LASTVALUE}</description>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Battery monitoring</name>
+                    <key>vfs.fs.battery[*]</key>
+                    <delay>3m</delay>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Physical disks monitoring</name>
+                    <key>vfs.fs.discstatus[*]</key>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Monitoring of Logical disks</name>
+                    <key>vfs.fs.logicalstatus[*]</key>
+                    <delay>2m</delay>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{HP physical-Logical drive and battery:vfs.fs.battery.nodata(60m)}=1 or&#13;
+{HP physical-Logical drive and battery:vfs.fs.logicalstatus.nodata(60m)}=1 or&#13;
+{HP physical-Logical drive and battery:vfs.fs.discstatus.nodata(60m)}=1</expression>
+            <name>No data from {HOSTNAME}</name>
+            <priority>HIGH</priority>
+            <description>No data about battery, logical/physical disks, more than 1 hour, {HOSTNAME}.</description>
+        </trigger>
+    </triggers>
+</zabbix_export>

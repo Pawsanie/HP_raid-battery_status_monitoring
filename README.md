@@ -1,1 +1,2 @@
-# HP_raid-battery_status_monitoring
+# HP raid-battery status monitoring.
+
