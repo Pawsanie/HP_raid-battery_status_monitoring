@@ -13,7 +13,7 @@ It's specifically about:
 :warning:The **licenses** for the technologies on which the code **depends** are subject to **change by their authors**.<br>
 
 :warning:Please note that these monitoring scripts are intended for servers **Hewlett Packard** and uses the **"hpssacli"** utility.<br>
-:warning:This means that you **may need a paid subscription or license or their equivalent** to use HP software.<br><br>
+:warning:This means that you **may need a paid subscription or license or their equivalent** to use HP software on your machines.<br><br>
 
 ___
 <br>
