@@ -4,7 +4,7 @@ Monitoring scripts solve the problem of not being able to otherwise get the nece
 
 It's specifically about:
 * :atm:A status of the raids of physical disks.
-* :abacus:Status of logical drives.
+* :abacus:Status of logical disks.
 * :battery:Motherboard battery status.
 
 ## Disclaimer:
