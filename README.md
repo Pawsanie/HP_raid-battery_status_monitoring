@@ -69,7 +69,7 @@ Apply template "zbx_raid_battery_templates.xml" to Zabbix server.<br>
 
 You can read more about this in the [official documentation](https://www.zabbix.com/documentation/6.0/en/manual/xml_export_import/templates#importing).
 
-## Installing monitoring with Ansible:
+## Deployment monitoring with Ansible:
 Copy the contents of folders "**Scripts**" and "**Zabbix-Agent_configs**" to "files" folder of "**copying-monitoring-scripts**" ansible role.<br>
 **"files" folder of role location:**<br>
 **./**:open_file_folder:HP_raid-battery_status_monitoring<br>
