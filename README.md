@@ -99,6 +99,20 @@ Run the ansible playbook:<br>
 ansible-playbook raid-battary_zabbix.yml
 ```
 
+### List of Ansible roles in the playbook:
+* **copying-monitoring-scripts**:<br>
+Copies configurations for zabbix-agent to the folder '/etc/zabbix/zabbix_agentd.d/'.<br>
+Copies monitoring scripts to the folder '/etc/zabbix/zabbix_agentd.d/scripts/'.
+* **debian-sudo-install**:<br>
+Installs sudo on a debian machine using the 'apt' module.<br>
+Without this modification, zabbix-agent will not collect the necessary information about disks and send it to the server, from machines running debian-based operating systems.
+* **sudo-scripts-settings**:<br>
+Copies the configuration sudo include in /etc/sudoers.d/ folder.<br>
+This configuration implies the right to execute only 'hpssacli', and only with the 'ctrl all show config detail' key, on any machine.<br>
+Sudo is required to execute the desired command.
+* **zabbix-agent-restart**:<br>
+Restarts the zabbix-agent on the node.
+
 ***
 
 **Thank you** for your interest in my work.<br><br>
