@@ -40,6 +40,12 @@ Monitoring is based on parsing output to the terminal from the "hpssacli" applic
 :warning:**Additional charges may apply** to use the app.:warning:<br>
 Read more on the manufacturer's [official website](https://www.hpe.com/)
 
+**Ansible** [GPL-3.0 license / proprietary (See developer site)]:
+* :octocat:[Ansible GitHub](https://github.com/ansible/ansible)
+* :bookmark_tabs:[Ansible internet page](https://www.ansible.com/)
+
+For deployment with ansible, if necessary.
+
 ## Preparing Zabbix agent for monitoring:
 1) Copy the files from the "Scripts" folder to the specified folder on your monitored node.
 ```text
@@ -62,6 +68,36 @@ Apply template "zbx_raid_battery_templates.xml" to Zabbix server.<br>
             └── :page_facing_up:zbx_raid_battery_templates.xml
 
 You can read more about this in the [official documentation](https://www.zabbix.com/documentation/6.0/en/manual/xml_export_import/templates#importing).
+
+## Installing monitoring with Ansible:
+Copy the contents of folders "**Scripts**" and "**Zabbix-Agent_configs**" to "files" folder of "**copying-monitoring-scripts**" ansible role.<br>
+**"files" folder of role location:**<br>
+**./**:open_file_folder:HP_raid-battery_status_monitoring<br>
+   └── :file_folder:Ansible-Playbook<br>
+            └── :file_folder:roles<br>
+                     └── :file_folder:copying-monitoring-scripts<br>
+                              └── :file_folder:files<br>
+
+Then fill in the hosts file for the ansible playbook with the actual data.<br>
+**"hosts" file location:**<br>
+**./**:open_file_folder:HP_raid-battery_status_monitoring<br>
+   └── :file_folder:Ansible-Playbook<br>
+            └── :file_folder:Inventory<br>
+                     └── :page_facing_up:hosts<br>
+**Example of hosts file in 'Inventory' folder':**
+```text
+[group_hpraid_search]
+0.0.0.0
+your.dns_name.domen
+
+[group_hpraid_search:vars]
+ansible_user=user_name
+ansible_ssh_pass=user_password
+```
+Run the ansible playbook:<br>
+```bash
+ansible-playbook raid-battary_zabbix.yml
+```
 
 ***
 
