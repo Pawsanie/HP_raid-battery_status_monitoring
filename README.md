@@ -104,7 +104,7 @@ ansible-playbook raid-battary_zabbix.yml
 Copies configurations for zabbix-agent to the folder '/etc/zabbix/zabbix_agentd.d/'.<br>
 Copies monitoring scripts to the folder '/etc/zabbix/zabbix_agentd.d/scripts/'.
 * **debian-sudo-install**:<br>
-Installs sudo on a debian machine using the 'apt' module.<br>
+Installs 'sudo' on a debian machine using the 'apt' module.<br>
 Without this modification, zabbix-agent will not collect the necessary information about disks and send it to the server, from machines running debian-based operating systems.
 * **sudo-scripts-settings**:<br>
 Copies the configuration sudo include in '/etc/sudoers.d/' folder.<br>
