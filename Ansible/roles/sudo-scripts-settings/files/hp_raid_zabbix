@@ -1,0 +1,1 @@
+zabbix      ALL=(ALL:ALL) NOPASSWD:/usr/sbin/hpssacli ctrl all show config detail

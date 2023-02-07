@@ -1,0 +1,5 @@
+---
+#- name:
+  gather_facts: No
+  hosts: all
+  become: yess

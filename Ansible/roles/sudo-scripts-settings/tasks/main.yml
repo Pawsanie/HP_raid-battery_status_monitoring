@@ -1,0 +1,7 @@
+---
+#Datta copy.
+
+- name: Copy sudo
+  copy:
+    src: hp_raid_zabbixs
+    dest: /etc/sudoers.d/

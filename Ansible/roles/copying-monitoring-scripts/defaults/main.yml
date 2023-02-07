@@ -1,0 +1,5 @@
+---
+#- name: scripts copy
+  gather_facts: No
+  hosts: all
+  become: yess

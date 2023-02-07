@@ -1,0 +1,40 @@
+---
+#Scripts and zabbix-agent configs copy.
+
+- name: Copy userparameter_raid.conf
+  copy:
+    src: userparameter_raid.conf
+    dest: /etc/zabbix/zabbix_agentd.d/
+
+
+- name: Copy script
+  copy:
+    src: test_raid.sh
+    dest: /etc/zabbix/zabbix_agentd.d/scripts/
+    mode: +x
+
+- name: Copy userparameter_logical_drive.conf
+  copy:
+    src: userparameter_logical_drive.conf
+    dest: /etc/zabbix/zabbix_agentd.d/
+
+
+- name: Copy logical test script
+  copy:
+    src: test_logical_drive.sh
+    dest: /etc/zabbix/zabbix_agentd.d/scripts/
+    mode: +x
+
+
+- name: Copy userparameter_battery.conf
+  copy:
+    src: userparameter_battery.conf
+    dest: /etc/zabbix/zabbix_agentd.d/
+
+
+- name: Copy battary test script
+  copy:
+    src: test_battery.sh
+    dest: /etc/zabbix/zabbix_agentd.d/scripts/
+    mode: +x
+

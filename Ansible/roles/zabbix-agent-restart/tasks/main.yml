@@ -1,0 +1,7 @@
+---
+#Restart zabbix-agent.
+
+- name: Service zabbix-agent restart
+  service:
+    name: zabbix-agent
+    state: restarted

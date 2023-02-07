@@ -1,0 +1,11 @@
+---
+- name: Inecietor of Roles
+  become: yes
+  hosts: all
+
+  roles:
+    - role: copying-monitoring-scripts
+    - role: debian-sudo-install
+      when: ansible_distribution == 'Debian'
+    - role: sudo-scripts-settings
+    - role: zabbix-agent-restart
